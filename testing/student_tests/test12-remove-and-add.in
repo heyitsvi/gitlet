@@ -1,0 +1,8 @@
+I single_commit_setup.inc
+> rm a.txt
+<<<
+* a.txt
++ a.txt wug.txt
+> add a.txt
+<<<
+I empty-status.inc

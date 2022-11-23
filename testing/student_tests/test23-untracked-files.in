@@ -1,0 +1,19 @@
+I single_commit_setup.inc
+I definitions.inc
+
+> log
+===
+${COMMIT_HEAD}
+a is a wug
+
+===
+${COMMIT_HEAD}
+initial commit
+
+<<<*
+D UDI2 "${2}"
+D UDI1 "${1}"
+
++ a.wug notwug.txt
+
+

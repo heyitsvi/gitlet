@@ -1,0 +1,54 @@
+I definitions.inc
+I single_commit_setup.inc
+
+> branch other
+<<<
+E a.txt
+
++ a.txt something.txt
+
+> add a.txt
+<<<
+
+> commit "a.txt is now something.txt"
+<<<
+= a.txt something.txt
+
+> checkout other
+<<<
+E a.txt
+
++ a.txt notwug.txt
+
+> add a.txt
+<<<
+
+> commit "a.txt is now notwug.txt"
+<<<
+= a.txt notwug.txt
+
+> checkout master
+<<<
+
+> merge other
+Encountered a merge conflict.
+<<<
+
+> log
+===
+${COMMIT_HEAD}
+Merged other into master.
+
+===
+${COMMIT_HEAD}
+a.txt is now something.txt
+
+===
+${COMMIT_HEAD}
+a is a wug
+
+===
+${COMMIT_HEAD}
+initial commit
+
+<<<*

@@ -1,0 +1,41 @@
+# Test to check branch checkout with deletion in one branch
+I definitions.inc
+#create a commit
+I single_commit_setup.inc
+
+# Create a new branch and switch to this branch
+> branch "test"
+<<<
+> checkout "test"
+<<<
+
+# overwrite contents of a.txt to something else and commit
++ a.txt notwug.txt
+> add a.txt
+<<<
+> commit "a is not a wug"
+<<<
+= a.txt notwug.txt
+
+# delete a.txt in branch
+> rm a.txt
+<<<
+* a.txt
++ b.txt wug.txt
+> add b.txt
+<<<
+> commit "added b.txt & deleted a.txt"
+<<<
+
+# checkout to original master branch, a.txt should exist
+> checkout "master"
+<<<
+* b.txt
+E a.txt
+
+# checkout back to test, a should be deleted
+> checkout "test"
+<<<
+* a.txt
+E b.txt
+

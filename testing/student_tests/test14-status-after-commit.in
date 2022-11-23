@@ -1,0 +1,10 @@
+I double_commit_setup.inc
+I empty-status.inc
+
+> rm a.txt
+<<<
+
+> commit "removed a.txt"
+<<<
+
+I empty-status.inc

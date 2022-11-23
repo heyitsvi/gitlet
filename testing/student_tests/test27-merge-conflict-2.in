@@ -1,0 +1,51 @@
+I definitions.inc
+> init
+<<<
+
+> branch other
+<<<
+
+> checkout other
+<<<
+
++ a.txt something.txt
+
+> add a.txt
+<<<
+
+> commit "a.txt is something.txt"
+<<<
+= a.txt something.txt
+
+> checkout master
+<<<
+* a.txt
+
++ a.txt notwug.txt
+
+> add a.txt
+<<<
+
+> commit "a.txt is notwug.txt"
+<<<
+= a.txt notwug.txt
+
+> merge other
+Encountered a merge conflict.
+<<<
+
+
+> log
+===
+${COMMIT_HEAD}
+Merged other into master.
+
+===
+${COMMIT_HEAD}
+a.txt is notwug.txt
+
+===
+${COMMIT_HEAD}
+initial commit
+
+<<<*

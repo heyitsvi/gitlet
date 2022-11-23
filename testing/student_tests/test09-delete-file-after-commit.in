@@ -1,0 +1,11 @@
+# Test commit works after deleting the file and committing again
+I definitions.inc
+
+#create a commit
+I single_commit_setup.inc
+
+> rm a.txt
+<<<
+
+> commit "removed a.txt"
+<<<

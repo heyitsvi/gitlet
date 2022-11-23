@@ -1,0 +1,43 @@
+# Test the remove branch command
+I definitions.inc
+
+#create a commit
+I single_commit_setup.inc
+
+> rm-branch "master"
+Cannot remove the current branch.
+<<<
+
+> rm-branch "test"
+A branch with that name does not exist.
+<<<
+
+> branch "other"
+<<<
+
+> checkout "other"
+<<<
++ b.txt notwug.txt
+
+> add b.txt
+<<<
+
+> commit "File b.txt"
+<<<
+
+> checkout "master"
+<<<
+* b.txt
+E a.txt
+
+> rm-branch "other"
+<<<
+
+> checkout "other"
+No such branch exists.
+<<<
+
+
+
+
+

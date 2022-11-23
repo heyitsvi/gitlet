@@ -1,0 +1,78 @@
+I definitions.inc
+
+> init
+<<<
+
+> branch b1
+<<<
+
+> branch b2
+<<<
+
+> checkout b1
+<<<
+
++ h.txt wug.txt
+
+> add h.txt
+<<<
+
+> commit "Add h.txt"
+<<<
+* f.txt
+
+> checkout b2
+<<<
+* h.txt
+
++ f.txt wug.txt
+
+> add f.txt
+<<<
+
+> commit "f.txt added"
+<<<
+
+> branch c1
+<<<
+E f.txt
+
++ g.txt notwug.txt
+
+> add g.txt
+<<<
+
+> rm f.txt
+<<<
+* f.txt
+
+> commit "g.txt added, f.txt removed"
+<<<
+= g.txt notwug.txt
+* f.txt
+* h.txt
+
+# > status
+# <<<
+
+> checkout b1
+<<<
+= h.txt wug.txt
+* f.txt
+* g.txt
+
+> merge c1
+<<<
+= f.txt wug.txt
+= h.txt wug.txt
+* g.txt
+
+#> log
+#<<<
+
+> merge b2
+<<<
+= g.txt notwug.txt
+= h.txt wug.txt
+* f.txt
+

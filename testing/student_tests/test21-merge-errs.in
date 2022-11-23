@@ -1,0 +1,25 @@
+I definitions.inc
+I single_commit_setup.inc
+
+> branch other
+<<<
+
++ b.txt wug.txt
+
+> add b.txt
+<<<
+
+> commit "added b.txt to master"
+<<<
+
+> merge other
+Given branch is an ancestor of the current branch.
+<<<
+
+> merge something
+A branch with that name does not exist.
+<<<
+
+> merge master
+Cannot merge a branch with itself.
+<<<

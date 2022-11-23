@@ -1,0 +1,23 @@
+# Test to check branch checkout
+I definitions.inc
+#create a commit
+I single_commit_setup.inc
+
+# Create a new branch and switch to this branch
+> branch "test"
+<<<
+> checkout "test"
+<<<
+
+# overwrite contents of a.txt to something else and commit
++ a.txt notwug.txt
+> add a.txt
+<<<
+> commit "a is not a wug"
+<<<
+= a.txt notwug.txt
+
+# checkout to original master branch, contents should change
+> checkout "master"
+<<<
+= a.txt wug.txt

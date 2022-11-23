@@ -1,0 +1,19 @@
+I definitions.inc
+I single_commit_setup.inc
+- a.txt
+> rm a.txt
+<<<
+> status
+=== Branches ===
+*master
+
+=== Staged Files ===
+
+=== Removed Files ===
+a.txt
+
+=== Modifications Not Staged For Commit ===
+
+=== Untracked Files ===
+
+<<<

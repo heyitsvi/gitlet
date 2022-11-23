@@ -1,0 +1,43 @@
+I definitions.inc
+
+> init
+<<<
+
+> branch "test"
+<<<
+
+#Create two files in master and commit them
++ f.txt wug.txt
++ g.txt notwug.txt
+> add g.txt
+<<<
+> add f.txt
+<<<
+> commit "Main two files"
+<<<
+E f.txt
+E g.txt
+
+#Switch to new branch, f.txt and g.txt should not exist
+> checkout "test"
+<<<
+* f.txt
+* g.txt
++ f.txt notwug.txt
+> add f.txt
+<<<
+> commit "Alternative file"
+<<<
+= f.txt notwug.txt
+* g.txt
+
+#Switch back to master, f.txt and g.txt should be in the directory
+> checkout "master"
+<<<
+= f.txt wug.txt
+= g.txt notwug.txt
+
+> checkout "test"
+<<<
+= f.txt notwug.txt
+* g.txt
