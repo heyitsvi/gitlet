@@ -21,16 +21,16 @@ public class Commit implements Serializable {
      * variable is used. We've provided one example for `message`.
      */
 
-    /** The message of this Commit. */
-    //private String author;
+    /** The date the Commit was made. */
     private Date date;
+    /** The message of this Commit. */
     private String message;
+    /** Parent of this commit */
     private String parent;
+    /** Parent2 of this commit (if it's a merge commit) */
     private String parent2;
+    /** Tree that the commit points to **/
     private String tree;
-
-    //private TreeMap<String, String> map = new TreeMap<>();
-
 
     Commit(String message, String parent, Date date, String tree, String parent2) {
         this.message = message;
@@ -283,6 +283,7 @@ public class Commit implements Serializable {
         writeContents(join(HEADS_DIR, branch), commitID);
     }
 
+    /** Find the SHA of the initial commit **/
     public static String findInitCommitSHA() {
         List<String> allCommits = plainFilenamesIn(COMMIT_DIR);
         for (String commit : allCommits) {
