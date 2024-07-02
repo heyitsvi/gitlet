@@ -16,5 +16,4 @@ A version-control system is essentially a backup system for related collections 
 
 ![Gitlet Structure](https://sp21.datastructur.es/materials/proj/proj2/image/commits-and-blobs.png)
 
-For checking out how this project was constructed, please refer to my CS61B repository where you can find my commit history.  
 You can check the full spec list and instructions to run [here](https://sp21.datastructur.es/materials/proj/proj2/proj2#the-commands)
